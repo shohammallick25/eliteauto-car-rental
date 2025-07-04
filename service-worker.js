@@ -4,7 +4,7 @@ const urlsToCache = [
   '/index.html',
   '/styles.css',
   '/manifest.json',
-  '/assets/logo-white.png',
+  '/assets/logo-dark.png',
   '/assets/logo-dark.png',
   '/assets/header.png'
   // Add other image and asset files (deals, etc.) if needed
