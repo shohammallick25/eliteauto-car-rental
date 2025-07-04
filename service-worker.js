@@ -1,23 +1,26 @@
-const CACHE_NAME = "eliteauto-cache-v1";
+const CACHE_NAME = 'eliteauto-cache-v1';
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/assets/css/style.css",
-  "/assets/js/script.js",
-  "/manifest.json",
-  "/assets/logo-white.png",
-  "/assets/logo-dark.png"
-  // Add other important files
+  '/',
+  '/index.html',
+  '/styles.css',
+  '/manifest.json',
+  '/assets/logo-white.png',
+  '/assets/logo-dark.png',
+  '/assets/header.png'
+  // Add other image and asset files (deals, etc.) if needed
 ];
 
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(urlsToCache))
+      .catch(err => console.error('Error caching files', err))
   );
 });
 
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    caches.match(e.request).then(response => response || fetch(e.request))
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => response || fetch(event.request))
   );
 });
