@@ -5,8 +5,8 @@ const urlsToCache = [
   "/assets/css/style.css",
   "/assets/js/script.js",
   "/manifest.json",
-  "/assets/images/logo-white.png",
-  "/assets/images/logo-dark.png"
+  "/assets/logo-white.png",
+  "/assets/logo-dark.png"
   // Add other important files
 ];
 
